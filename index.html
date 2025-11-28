@@ -4,105 +4,114 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Vijenex™ — Security Automation & AI Tools</title>
-  <meta name="description" content="Vijenex™ — AI-powered security automation, Windows CIS scanner, cloud security toolkit, and DevSecOps utilities." />
+  <meta name="description" content="Vijenex — AI-driven security automation, CIS scanning, cloud security toolkit and DevSecOps utilities." />
   <link rel="icon" href="assets/logo-icon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Orbitron:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body class="theme-dark">
   <header class="topbar">
-    <div class="brand">
-      <img src="assets/logo-icon.png" alt="Vijenex" class="logo-icon" onerror="this.style.display='none'"/>
-      <img src="assets/logo-full.png" alt="Vijenex" class="logo-full" onerror="this.style.display='none'"/>
-      <div class="brand-text">
-        <h1>Vijenex<span class="tm">™</span></h1>
-        <p class="tag">AI-powered Security Automation & Open Source Tools</p>
+    <div class="inner">
+      <div class="left">
+        <img src="assets/logo-icon.svg" alt="Vijenex" class="logo-icon" onerror="this.src='assets/logo-icon.png'"/>
+        <div class="brand-text">
+          <div class="brand-name">Vijenex<span class="tm">™</span></div>
+          <div class="brand-slogan">AI · Security · Automation</div>
+        </div>
       </div>
-    </div>
 
-    <div class="top-actions">
-      <button id="themeToggle" aria-label="Toggle theme">☀️/🌙</button>
-      <a class="btn" href="https://github.com/vijenex">View GitHub Org</a>
+      <nav class="nav">
+        <a href="#products">Products</a>
+        <a href="#why">Why Vijenex</a>
+        <a href="#blog">Blog</a>
+        <a href="https://github.com/vijenex" class="btn small">GitHub</a>
+      </nav>
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-inner">
-        <h2 class="animate-fade-up">Security. Automation. Intelligence.</h2>
-        <p class="lead animate-fade-up delay-1">Vijenex™ builds open-source tools for system auditing, cloud security, and DevSecOps automation.</p>
-        <div class="hero-cta animate-fade-up delay-2">
-          <a class="btn primary" href="#products">Explore Tools</a>
-          <a class="btn ghost" href="#blog">Read Blog</a>
-        </div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>Automate security checks. Ship safer.</h1>
+      <p class="sub">Vijenex™ builds lightweight, open-source security tooling for CIS compliance, cloud hygiene, and DevSecOps automation.</p>
+      <div class="hero-ctas">
+        <a class="btn primary" href="#products">Explore Tools</a>
+        <a class="btn ghost" href="#why">Why Vijenex?</a>
       </div>
-      <div class="hero-visual" role="img" aria-label="Vijenex visual">
-        <img src="assets/hero-bg.jpg" alt="" onerror="this.style.display='none'">
+      <div class="trust">
+        <span>Trademark App No. 7368905 (Class 9)</span>
       </div>
-    </section>
+    </div>
+    <figure class="hero-art">
+      <!-- responsive hero image (replace hero-optimized.jpg) -->
+      <img src="assets/hero-optimized.jpg"
+           srcset="assets/hero-optimized-1200.jpg 1200w, assets/hero-optimized-900.jpg 900w, assets/hero-optimized-600.jpg 600w"
+           sizes="(min-width:900px) 420px, 90vw"
+           alt="Vijenex visual" loading="lazy">
+    </figure>
+  </section>
 
-    <section id="products" class="section products">
-      <h3 class="section-title">Product Showcase</h3>
-      <p class="section-sub">Open-source tools and utilities — click to view repos</p>
-      <div class="cards">
-        <article class="card animate-pop">
-          <img src="assets/product1.png" alt="Windows CIS Scanner" onerror="this.src='https://via.placeholder.com/400x240?text=Windows+CIS+Scanner'">
-          <div class="card-body">
-            <h4>Windows CIS Scanner</h4>
-            <p>Automated CIS benchmarks scanning and reporting for Windows environments.</p>
-            <a class="card-link" href="https://github.com/vijenex/vijenex-windows-cis">Repository →</a>
-          </div>
-        </article>
+  <!-- WHAT WE OFFER -->
+  <section id="products" class="section compact">
+    <h2>What we offer</h2>
+    <p class="lead-small">Open-source tooling and integrations for security engineers and DevOps teams.</p>
 
-        <article class="card animate-pop delay-1">
-          <img src="assets/product2.png" alt="Cloud Security Toolkit" onerror="this.src='https://via.placeholder.com/400x240?text=Cloud+Security+Toolkit'">
-          <div class="card-body">
-            <h4>Cloud Security Toolkit</h4>
-            <p>Scripts and analyzers for cloud misconfiguration detection and policy checks.</p>
-            <a class="card-link" href="https://github.com/vijenex/vijenex-cloud-toolkit">Repository →</a>
-          </div>
-        </article>
-
-        <article class="card animate-pop delay-2">
-          <img src="assets/product3.png" alt="DevSecOps Utilities" onerror="this.src='https://via.placeholder.com/400x240?text=DevSecOps+Utilities'">
-          <div class="card-body">
-            <h4>DevSecOps Utilities</h4>
-            <p>CI helpers, policy-as-code templates, and automation libraries for security pipelines.</p>
-            <a class="card-link" href="https://github.com/vijenex/vijenex-core">Repository →</a>
-          </div>
-        </article>
+    <div class="grid-3">
+      <div class="card small">
+        <img src="assets/product1-thumb.jpg" alt="Windows CIS Scanner" loading="lazy">
+        <h4>Windows CIS Scanner</h4>
+        <p>Automated CIS benchmark checks and clean HTML/JSON reports.</p>
+        <a class="link" href="https://github.com/vijenex/vijenex-windows-cis">View repo →</a>
       </div>
-    </section>
 
-    <section id="blog" class="section blog">
-      <h3 class="section-title">Latest Posts</h3>
-      <div class="blog-list">
-        <!-- Blog posts: created as markdown files in /blog or manually link here -->
-        <article class="post animate-fade-up">
-          <h4><a href="blog/post-announce-launch.html">Launching Vijenex™ — Our Mission & Roadmap</a></h4>
-          <p class="meta">Nov 28, 2025 • Announcement</p>
-          <p>We are building open-source security automation tools focused on CIS benchmarks and cloud engineering...</p>
-        </article>
-
-        <article class="post animate-fade-up delay-1">
-          <h4><a href="blog/post-cis-scanner.html">Windows CIS Scanner — Design & Roadmap</a></h4>
-          <p class="meta">Nov 25, 2025 • Product</p>
-          <p>An overview of the scanning engine, rules mapping, and report formats we support...</p>
-        </article>
+      <div class="card small">
+        <img src="assets/product2-thumb.jpg" alt="Cloud Security Toolkit" loading="lazy">
+        <h4>Cloud Security Toolkit</h4>
+        <p>Cloud misconfiguration detection & infrastructure checks.</p>
+        <a class="link" href="https://github.com/vijenex/vijenex-cloud-toolkit">View repo →</a>
       </div>
-      <div style="text-align:center;margin-top:18px">
-        <a class="btn ghost" href="blog/">View all posts</a>
-      </div>
-    </section>
 
-    <section class="section about">
-      <h3 class="section-title">About Vijenex™</h3>
-      <p>Vijenex™ is a trademark filed under Application No. 7368905 (Class 9). We build tools for security engineers, auditors, and DevOps teams.</p>
-    </section>
-  </main>
+      <div class="card small">
+        <img src="assets/product3-thumb.jpg" alt="DevSecOps Utilities" loading="lazy">
+        <h4>DevSecOps Utilities</h4>
+        <p>CI helpers, policy-as-code, and automation primitives.</p>
+        <a class="link" href="https://github.com/vijenex/vijenex-core">View repo →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY VIJENEX (cybersecurity section) -->
+  <section id="why" class="section why">
+    <div class="inner-why">
+      <h3>Why Vijenex?</h3>
+      <ul class="bullets">
+        <li><strong>Practical:</strong> Lightweight tools you can run in CI or locally.</li>
+        <li><strong>Compliant:</strong> Rules mapped to CIS benchmarks and security standards.</li>
+        <li><strong>Extensible:</strong> Integrates with GitHub, CI, cloud providers and dashboards.</li>
+      </ul>
+      <p class="note">We focus on actionable findings with remediation steps — not noise.</p>
+    </div>
+  </section>
+
+  <!-- BLOG PREVIEW -->
+  <section id="blog" class="section compact">
+    <h2>Latest from the blog</h2>
+    <div class="blog-row">
+      <article class="post">
+        <h4><a href="blog/post-announce-launch.html">Launching Vijenex™ — Mission & Roadmap</a></h4>
+        <p class="meta">Nov 28, 2025 — Announcement</p>
+      </article>
+      <article class="post">
+        <h4><a href="blog/post-cis-scanner.html">Windows CIS Scanner — Design</a></h4>
+        <p class="meta">Nov 25, 2025 — Product</p>
+      </article>
+    </div>
+  </section>
 
   <footer class="site-footer">
-    <div>
-      © 2025 Vijenex™ • <a href="https://github.com/vijenex">GitHub</a> • Trademark App No. 7368905
+    <div class="inner">
+      <div>© 2025 Vijenex™</div>
+      <div class="footer-links"><a href="mailto:support@vijenex.com">support@vijenex.com</a> • <a href="https://github.com/vijenex">GitHub</a></div>
     </div>
   </footer>
 
