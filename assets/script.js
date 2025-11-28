@@ -20,3 +20,7 @@ else {
   const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
   applyTheme(prefersLight ? 'light' : 'dark');
 }
+// small script: nothing heavy
+document.addEventListener('click', e => {
+  // placeholder for future interactions
+});
