@@ -1,26 +1,17 @@
-// theme toggle and remember preference
-const body = document.body;
+// Theme toggle (simple, remembers choice)
 const btn = document.getElementById('themeToggle');
-
-function applyTheme(t){
-  body.classList.remove('theme-light','theme-dark');
-  body.classList.add(t === 'light' ? 'theme-light' : 'theme-dark');
-  localStorage.setItem('vj_theme', t);
+const root = document.documentElement;
+function setTheme(t){
+  if(t === 'light'){ document.body.classList.remove('theme-dark'); document.body.classList.add('theme-light'); localStorage.setItem('vj_theme','light'); }
+  else { document.body.classList.remove('theme-light'); document.body.classList.add('theme-dark'); localStorage.setItem('vj_theme','dark'); }
 }
 btn?.addEventListener('click', () => {
-  const current = body.classList.contains('theme-light') ? 'light' : 'dark';
-  applyTheme(current === 'light' ? 'dark' : 'light');
+  const current = localStorage.getItem('vj_theme') === 'light' ? 'light' : 'dark';
+  setTheme(current === 'light' ? 'dark' : 'light');
 });
-
-// initialize
 const saved = localStorage.getItem('vj_theme');
-if(saved) applyTheme(saved);
+if(saved) setTheme(saved);
 else {
-  // prefer dark by default (but follow user's system preference)
   const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-  applyTheme(prefersLight ? 'light' : 'dark');
+  setTheme(prefersLight ? 'light' : 'dark');
 }
-// small script: nothing heavy
-document.addEventListener('click', e => {
-  // placeholder for future interactions
-});
