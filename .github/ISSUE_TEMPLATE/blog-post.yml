@@ -1,0 +1,119 @@
+name: 📝 Submit Blog Post
+description: Submit a blog post for Vijenex™ Blog
+title: "[BLOG] "
+labels: ["blog-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Submit Your Blog Post
+        Fill out the form below to submit your blog post. We'll review and publish it!
+        
+        **Tip:** Write in Markdown format. [View Writing Guide](https://github.com/vijenex/vijenex.github.io/blob/main/blog/WRITING_GUIDE.md)
+
+  - type: input
+    id: title
+    attributes:
+      label: Blog Title
+      description: Enter your blog post title
+      placeholder: "e.g., Securing Kubernetes with Network Policies"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: Choose the most relevant category
+      options:
+        - Cloud Security
+        - DevSecOps
+        - Compliance
+        - Vulnerability Management
+        - Container Security
+        - Infrastructure as Code
+        - Best Practices
+        - Tool Reviews
+        - Case Studies
+        - Announcements
+    validations:
+      required: true
+
+  - type: input
+    id: author
+    attributes:
+      label: Author Name
+      description: Your full name (will be displayed on the blog)
+      placeholder: "e.g., John Doe"
+    validations:
+      required: true
+
+  - type: input
+    id: bio
+    attributes:
+      label: Short Bio
+      description: One-line bio about yourself (optional)
+      placeholder: "e.g., Cloud Security Engineer at XYZ Corp"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: show-github
+    attributes:
+      label: Display GitHub Username
+      description: Show your GitHub username on the blog post?
+      options:
+        - label: Yes, show my GitHub username (@username)
+
+  - type: textarea
+    id: content
+    attributes:
+      label: Blog Content (Markdown)
+      description: Write your blog post in Markdown format
+      placeholder: |
+        ## Introduction
+        
+        Your introduction here...
+        
+        ## Main Section
+        
+        **Bold text** and *italic text*
+        
+        ```python
+        # Code example
+        def hello():
+            print("Hello World")
+        ```
+        
+        ![Image](https://example.com/image.png)
+        
+        [Link text](https://example.com)
+        
+        ## Conclusion
+        
+        Your conclusion...
+      render: markdown
+    validations:
+      required: true
+
+  - type: input
+    id: cover-image
+    attributes:
+      label: Cover Image URL (Optional)
+      description: URL to cover image (Imgur, GitHub, etc.)
+      placeholder: "https://imgur.com/abc123.png"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Submission Agreement
+      description: By submitting, you agree to the following
+      options:
+        - label: I own the content or have permission to publish it
+          required: true
+        - label: I agree to publish under Vijenex™ blog with proper attribution
+          required: true
+        - label: Content does not contain sensitive/confidential information
+          required: true
