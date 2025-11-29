@@ -3,100 +3,304 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Vijenex™ — Security Automation & AI Tools</title>
-  <meta name="description" content="Vijenex — AI-driven security automation, CIS scanning, cloud security toolkit and DevSecOps utilities." />
-  <link rel="icon" href="assets/logo-icon.svg" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <title>Vijenex™ — Enterprise Security Automation & Cloud Security Tools</title>
+  <meta name="description" content="Vijenex™ — Open-source security automation, CIS scanning, vulnerability detection, and cloud security engineering tools for DevSecOps teams." />
+  <meta name="author" content="Vijenex™" />
+  <meta name="copyright" content="© 2025 Vijenex™. All rights reserved." />
+  <meta name="trademark" content="Vijenex™ is a registered trademark. App No. 7368905, Class 9, India" />
+  <link rel="icon" href="assets/logo-icon.png" />
+  <link rel="canonical" href="https://vijenex.github.io/" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css" />
+  <!-- Security Headers -->
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
 </head>
 <body class="theme-dark">
+  <!-- Animated Circuit Background -->
+  <canvas id="circuitCanvas" class="circuit-bg"></canvas>
+  
   <header class="topbar">
     <div class="inner">
       <a class="brand" href="/">
-        <img src="assets/logo-icon.svg" alt="Vijenex" class="logo-icon">
-        <img src="assets/logo-full.svg" alt="Vijenex" class="logo-full">
+        <img src="assets/logo-icon.png" alt="Vijenex" class="logo-icon">
+        <span class="brand-text">Vijenex<sup>™</sup></span>
       </a>
       <nav class="nav">
-        <a href="#products">Products</a>
-        <a href="#why">Why Vijenex</a>
-        <a href="#blog">Blog</a>
-        <a class="btn small" href="https://github.com/vijenex" target="_blank" rel="noopener">GitHub</a>
-        <button id="themeToggle" aria-label="Toggle theme" class="theme-btn">🌓</button>
+        <a href="#tools">Tools</a>
+        <a href="#integrations">Integrations</a>
+        <a href="blog/">Blog</a>
+        <a href="#contribute">Contribute</a>
+        <a class="btn small" href="https://github.com/vijenex" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <button id="themeToggle" aria-label="Toggle theme" class="theme-btn">☀️</button>
       </nav>
     </div>
   </header>
 
   <main>
     <section class="hero">
-      <div class="hero-left">
-        <h1 class="headline">Automate security checks. Ship safer.</h1>
-        <p class="sub">Vijenex™ builds lightweight, open-source security tooling for CIS compliance, cloud hygiene, and DevSecOps automation.</p>
+      <img src="assets/logo-full.png" alt="" class="hero-bg-logo">
+      <div class="hero-content">
+        <div class="badge">🔒 Trusted by Security Engineers Worldwide</div>
+        <h1 class="headline">Enterprise-Grade Security Automation for Modern DevSecOps</h1>
+        <p class="sub">Open-source security tools for CIS compliance scanning, vulnerability detection, and cloud security engineering across multicloud.</p>
         <div class="hero-ctas">
-          <a class="btn primary" href="#products">Explore Tools</a>
-          <a class="btn ghost" href="#why">Why Vijenex?</a>
+          <a class="btn primary" href="#tools">Explore Tools</a>
+          <a class="btn ghost" href="blog/">Read Blog</a>
+          <a class="btn ghost" href="#contribute">Contribute</a>
         </div>
-        <div class="micro">Trademark App No. 7368905 (Class 9) • © 2025 Vijenex™</div>
-      </div>
-      <div class="hero-right">
-        <img src="assets/hero-optimized.svg" alt="Vijenex visual" class="hero-art">
       </div>
     </section>
 
-    <section id="products" class="section compact">
-      <h2 class="section-title">What we offer</h2>
-      <p class="lead">Open-source tooling and integrations for security engineers and DevOps teams.</p>
-
-      <div class="grid-3">
-        <article class="card">
-          <img src="assets/product1-thumb.svg" alt="Windows CIS Scanner" loading="lazy">
-          <h4>Windows CIS Scanner</h4>
-          <p>Automated CIS benchmark checks and compact JSON/HTML reports for CI pipelines.</p>
-          <a class="link" href="https://github.com/vijenex/vijenex-windows-cis" target="_blank">View repo →</a>
-        </article>
-
-        <article class="card">
-          <img src="assets/product2-thumb.svg" alt="Cloud Security Toolkit" loading="lazy">
-          <h4>Cloud Security Toolkit</h4>
-          <p>Cloud misconfiguration detection, IAM checks, and remediation helpers.</p>
-          <a class="link" href="https://github.com/vijenex/vijenex-cloud-toolkit" target="_blank">View repo →</a>
-        </article>
-
-        <article class="card">
-          <img src="assets/product3-thumb.svg" alt="DevSecOps Utilities" loading="lazy">
-          <h4>DevSecOps Utilities</h4>
-          <p>CI helpers, policy-as-code templates, and automation primitives for secure pipelines.</p>
-          <a class="link" href="https://github.com/vijenex/vijenex-core" target="_blank">View repo →</a>
-        </article>
+    <section class="what-we-do">
+      <div class="container">
+        <h2>What We Deliver</h2>
+        <div class="grid-4">
+          <div class="feature-box">
+            <div class="icon">🛡️</div>
+            <h3>CIS Compliance Scanning</h3>
+            <p>Automated benchmark checks for Windows & Linux systems</p>
+          </div>
+          <div class="feature-box">
+            <div class="icon">🔍</div>
+            <h3>Vulnerability Detection</h3>
+            <p>Real-time security scanning and threat identification</p>
+          </div>
+          <div class="feature-box">
+            <div class="icon">☁️</div>
+            <h3>Cloud Security Tools</h3>
+            <p>Multi-cloud security engineering for AWS, Azure, GCP & OCI</p>
+          </div>
+          <div class="feature-box">
+            <div class="icon">⚙️</div>
+            <h3>DevSecOps Automation</h3>
+            <p>CI/CD security integration and policy-as-code</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="why" class="section why">
-      <div class="why-left">
-        <h3>Why Vijenex?</h3>
-        <ul class="bullets">
-          <li><strong>Practical:</strong> Lightweight tools that run in CI or locally.</li>
-          <li><strong>Compliant:</strong> Rules mapped to CIS benchmarks & security standards.</li>
-          <li><strong>Extensible:</strong> Integrates with GitHub Actions, cloud providers, and dashboards.</li>
-        </ul>
-      </div>
-      <div class="why-right">
-        <p class="note">We prioritize actionable findings with clear remediation steps — no noise.</p>
+    <section id="tools" class="section">
+      <div class="container">
+        <h2 class="section-title">Open-Source Security Tools</h2>
+        <p class="lead">Production-ready security automation for enterprise environments</p>
+
+        <div class="grid-3">
+          <article class="tool-card">
+            <div class="tool-header">
+              <span class="tool-icon">🪟</span>
+              <span class="status-badge">Active</span>
+            </div>
+            <h3>Windows CIS Scanner</h3>
+            <p>Automated CIS benchmark compliance checks with JSON/HTML reports for CI/CD pipelines.</p>
+            <ul class="tool-features">
+              <li>✓ CIS Benchmark v2.0</li>
+              <li>✓ PowerShell & Python</li>
+              <li>✓ CI/CD Integration</li>
+            </ul>
+            <a class="btn-tool" href="https://github.com/vijenex/vijenex-windows-cis" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+          </article>
+
+          <article class="tool-card">
+            <div class="tool-header">
+              <span class="tool-icon">🐧</span>
+              <span class="status-badge">Active</span>
+            </div>
+            <h3>Linux CIS Scanner</h3>
+            <p>Comprehensive CIS compliance scanning for RHEL, Ubuntu, Debian, and CentOS distributions.</p>
+            <ul class="tool-features">
+              <li>✓ Multi-distro Support</li>
+              <li>✓ Automated Remediation</li>
+              <li>✓ Ansible Integration</li>
+            </ul>
+            <a class="btn-tool" href="https://github.com/vijenex/vijenex-linux-cis" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+          </article>
+
+          <article class="tool-card">
+            <div class="tool-header">
+              <span class="tool-icon">🔍</span>
+              <span class="status-badge coming">Coming Soon</span>
+            </div>
+            <h3>Vulnerability Scanner</h3>
+            <p>Real-time vulnerability detection and CVE tracking for applications and infrastructure.</p>
+            <ul class="tool-features">
+              <li>✓ CVE Database</li>
+              <li>✓ Container Scanning</li>
+              <li>✓ SBOM Generation</li>
+            </ul>
+            <a class="btn-tool disabled">Coming Q2 2025</a>
+          </article>
+
+          <article class="tool-card">
+            <div class="tool-header">
+              <span class="tool-icon">☁️</span>
+              <span class="status-badge">Active</span>
+            </div>
+            <h3>Cloud Security Toolkit</h3>
+            <p>Multi-cloud security posture management for AWS, Azure, GCP, and Oracle Cloud.</p>
+            <ul class="tool-features">
+              <li>✓ IAM Analysis</li>
+              <li>✓ Misconfiguration Detection</li>
+              <li>✓ Compliance Reports</li>
+            </ul>
+            <a class="btn-tool" href="https://github.com/vijenex/vijenex-cloud-toolkit" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+          </article>
+
+          <article class="tool-card">
+            <div class="tool-header">
+              <span class="tool-icon">⚙️</span>
+              <span class="status-badge">Active</span>
+            </div>
+            <h3>DevSecOps Utilities</h3>
+            <p>Security automation primitives, policy-as-code templates, and CI/CD helpers.</p>
+            <ul class="tool-features">
+              <li>✓ GitHub Actions</li>
+              <li>✓ Jenkins Plugins</li>
+              <li>✓ Terraform Modules</li>
+            </ul>
+            <a class="btn-tool" href="https://github.com/vijenex/vijenex-core" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+          </article>
+
+          <article class="tool-card">
+            <div class="tool-header">
+              <span class="tool-icon">📊</span>
+              <span class="status-badge coming">Coming Soon</span>
+            </div>
+            <h3>Security Dashboard</h3>
+            <p>Centralized security metrics, compliance tracking, and vulnerability management.</p>
+            <ul class="tool-features">
+              <li>✓ Real-time Metrics</li>
+              <li>✓ Custom Dashboards</li>
+              <li>✓ API Integration</li>
+            </ul>
+            <a class="btn-tool disabled">Coming Q3 2025</a>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section id="blog" class="section compact">
-      <h2 class="section-title">Latest from the blog</h2>
-      <div class="blog-row">
-        <article class="post"><h4><a href="blog/post-announce-launch.html">Launching Vijenex™ — Mission & Roadmap</a></h4><p class="meta">Nov 28, 2025</p></article>
-        <article class="post"><h4><a href="blog/post-cis-scanner.html">Windows CIS Scanner — Design</a></h4><p class="meta">Nov 25, 2025</p></article>
+    <section id="integrations" class="section integrations">
+      <div class="container">
+        <h2 class="section-title">Seamless Integrations</h2>
+        <p class="lead">Works with your existing DevSecOps stack</p>
+        
+        <div class="tech-logos">
+          <div class="tech-category">
+            <h4>Cloud Providers</h4>
+            <div class="logo-grid">
+              <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS">
+              <img src="https://img.shields.io/badge/Azure-0078D4?style=for-the-badge&logo=microsoft-azure&logoColor=white" alt="Azure">
+              <img src="https://img.shields.io/badge/GCP-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white" alt="GCP">
+              <img src="https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white" alt="Oracle">
+              <img src="https://img.shields.io/badge/Alibaba_Cloud-FF6A00?style=for-the-badge&logo=alibaba-cloud&logoColor=white" alt="Alibaba">
+              <img src="https://img.shields.io/badge/IBM_Cloud-1261FE?style=for-the-badge&logo=ibm-cloud&logoColor=white" alt="IBM">
+            </div>
+          </div>
+          
+          <div class="tech-category">
+            <h4>CI/CD & Version Control</h4>
+            <div class="logo-grid">
+              <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
+              <img src="https://img.shields.io/badge/GitLab-FC6D26?style=for-the-badge&logo=gitlab&logoColor=white" alt="GitLab">
+              <img src="https://img.shields.io/badge/Jenkins-D24939?style=for-the-badge&logo=jenkins&logoColor=white" alt="Jenkins">
+              <img src="https://img.shields.io/badge/Azure_DevOps-0078D7?style=for-the-badge&logo=azure-devops&logoColor=white" alt="Azure DevOps">
+              <img src="https://img.shields.io/badge/Bitbucket-0052CC?style=for-the-badge&logo=bitbucket&logoColor=white" alt="Bitbucket">
+              <img src="https://img.shields.io/badge/CircleCI-343434?style=for-the-badge&logo=circleci&logoColor=white" alt="CircleCI">
+            </div>
+          </div>
+          
+          <div class="tech-category">
+            <h4>Infrastructure as Code</h4>
+            <div class="logo-grid">
+              <img src="https://img.shields.io/badge/Terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white" alt="Terraform">
+              <img src="https://img.shields.io/badge/Ansible-EE0000?style=for-the-badge&logo=ansible&logoColor=white" alt="Ansible">
+              <img src="https://img.shields.io/badge/Packer-02A8EF?style=for-the-badge&logo=packer&logoColor=white" alt="Packer">
+              <img src="https://img.shields.io/badge/Pulumi-8A3391?style=for-the-badge&logo=pulumi&logoColor=white" alt="Pulumi">
+              <img src="https://img.shields.io/badge/CloudFormation-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="CloudFormation">
+            </div>
+          </div>
+          
+          <div class="tech-category">
+            <h4>Container & Orchestration</h4>
+            <div class="logo-grid">
+              <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
+              <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Kubernetes">
+              <img src="https://img.shields.io/badge/OpenShift-EE0000?style=for-the-badge&logo=red-hat-open-shift&logoColor=white" alt="OpenShift">
+              <img src="https://img.shields.io/badge/Helm-0F1689?style=for-the-badge&logo=helm&logoColor=white" alt="Helm">
+            </div>
+          </div>
+          
+          <div class="tech-category">
+            <h4>Monitoring & Security</h4>
+            <div class="logo-grid">
+              <img src="https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=prometheus&logoColor=white" alt="Prometheus">
+              <img src="https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=grafana&logoColor=white" alt="Grafana">
+              <img src="https://img.shields.io/badge/Datadog-632CA6?style=for-the-badge&logo=datadog&logoColor=white" alt="Datadog">
+              <img src="https://img.shields.io/badge/Vault-000000?style=for-the-badge&logo=vault&logoColor=white" alt="Vault">
+              <img src="https://img.shields.io/badge/SonarQube-4E9BCD?style=for-the-badge&logo=sonarqube&logoColor=white" alt="SonarQube">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contribute" class="section contribute">
+      <div class="container">
+        <h2 class="section-title">Join the Community</h2>
+        <div class="contribute-grid">
+          <div class="contribute-card">
+            <h3>📝 Write for Us</h3>
+            <p>Share your security insights, research, and best practices with the community.</p>
+            <a class="btn secondary" href="https://github.com/vijenex/vijenex.github.io/issues/new?template=blog-submission.md" target="_blank" rel="noopener noreferrer">Submit Blog Post</a>
+          </div>
+          <div class="contribute-card">
+            <h3>💬 Share Feedback</h3>
+            <p>Help us improve our tools with your feedback, bug reports, and feature requests.</p>
+            <a class="btn secondary" href="https://github.com/vijenex/vijenex-core/issues/new" target="_blank" rel="noopener noreferrer">Give Feedback</a>
+          </div>
+          <div class="contribute-card">
+            <h3>🤝 Contribute Code</h3>
+            <p>Contribute to our open-source projects and help build better security tools.</p>
+            <a class="btn secondary" href="https://github.com/vijenex" target="_blank" rel="noopener noreferrer">View Repositories</a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="inner">
-      <div>© 2025 Vijenex™</div>
-      <div class="footer-links"><a href="mailto:support@vijenex.com">support@vijenex.com</a> • <a href="https://github.com/vijenex">GitHub</a></div>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="assets/logo-icon.png" alt="Vijenex" class="footer-logo">
+          <p>Vijenex<sup>™</sup></p>
+          <p class="footer-tagline">Enterprise Security Automation</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Products</h4>
+            <a href="#tools">Security Tools</a>
+            <a href="#integrations">Integrations</a>
+            <a href="blog/">Blog</a>
+          </div>
+          <div class="footer-col">
+            <h4>Community</h4>
+            <a href="https://github.com/vijenex" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="#contribute">Contribute</a>
+            <a href="https://github.com/vijenex/vijenex.github.io/issues" target="_blank" rel="noopener noreferrer">Report Issues</a>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <p class="footer-text">Trademark App No. 7368905</p>
+            <p class="footer-text">Class 9 • India</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Vijenex™. All rights reserved. Licensed under MIT.</p>
+      </div>
     </div>
   </footer>
 

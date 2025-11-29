@@ -1,16 +1,200 @@
 <!doctype html>
-<html><head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Blog - Vijenex™</title>
-  <link rel="stylesheet" href="../assets/style.css">
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blog — Vijenex™</title>
+  <meta name="description" content="Security insights, research, and best practices from the Vijenex™ team and community." />
+  <link rel="icon" href="../assets/logo-icon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css" />
+  <style>
+    .blog-header {
+      padding: 60px 24px 40px;
+      text-align: center;
+      background: var(--bg-secondary);
+    }
+    .blog-header h1 {
+      font-size: 48px;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    .blog-header p {
+      font-size: 18px;
+      color: var(--text-secondary);
+    }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 32px;
+      padding: 60px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .blog-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+    .blog-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow);
+      border-color: var(--accent-primary);
+    }
+    .blog-card-content {
+      padding: 24px;
+    }
+    .blog-meta {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+    .blog-tag {
+      background: var(--accent-primary);
+      color: white;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+    .blog-card h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+    .blog-card h3 a {
+      color: var(--text-primary);
+      transition: color 0.2s;
+    }
+    .blog-card h3 a:hover {
+      color: var(--accent-primary);
+    }
+    .blog-excerpt {
+      color: var(--text-secondary);
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .read-more {
+      color: var(--accent-primary);
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .read-more:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body class="theme-dark">
-  <header class="topbar"><a href="../">← Home</a></header>
-  <main style="max-width:900px;margin:40px auto;padding:12px;">
+  <header class="topbar">
+    <div class="inner">
+      <a class="brand" href="/">
+        <img src="../assets/logo-icon.png" alt="Vijenex" class="logo-icon">
+        <span class="brand-text">Vijenex<sup>™</sup></span>
+      </a>
+      <nav class="nav">
+        <a href="/#tools">Tools</a>
+        <a href="/#integrations">Integrations</a>
+        <a href="/blog/">Blog</a>
+        <a href="/#contribute">Contribute</a>
+        <a class="btn small" href="https://github.com/vijenex" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <button id="themeToggle" aria-label="Toggle theme" class="theme-btn">☀️</button>
+      </nav>
+    </div>
+  </header>
+
+  <div class="blog-header">
     <h1>Vijenex™ Blog</h1>
-    <article><h3><a href="post-announce-launch.html">Launching Vijenex™ — Our Mission & Roadmap</a></h3><p>Nov 28, 2025</p></article>
-    <article><h3><a href="post-cis-scanner.html">Windows CIS Scanner — Design & Roadmap</a></h3><p>Nov 25, 2025</p></article>
-  </main>
-  <footer style="text-align:center;padding:24px;">© 2025 Vijenex™</footer>
+    <p>Security insights, research, and best practices from our team and community</p>
+  </div>
+
+  <div class="blog-grid">
+    <article class="blog-card">
+      <div class="blog-card-content">
+        <div class="blog-meta">
+          <span class="blog-tag">Announcement</span>
+          <span>Nov 28, 2025</span>
+        </div>
+        <h3><a href="post-announce-launch.html">Launching Vijenex™ — Mission & Roadmap</a></h3>
+        <p class="blog-excerpt">Introducing Vijenex™, our mission to build enterprise-grade open-source security automation tools for modern DevSecOps teams.</p>
+        <a href="post-announce-launch.html" class="read-more">Read more →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <div class="blog-card-content">
+        <div class="blog-meta">
+          <span class="blog-tag">Technical</span>
+          <span>Nov 25, 2025</span>
+        </div>
+        <h3><a href="post-cis-scanner.html">Windows CIS Scanner — Design & Architecture</a></h3>
+        <p class="blog-excerpt">Deep dive into the architecture and design decisions behind our Windows CIS compliance scanner.</p>
+        <a href="post-cis-scanner.html" class="read-more">Read more →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <div class="blog-card-content">
+        <div class="blog-meta">
+          <span class="blog-tag">Security</span>
+          <span>Coming Soon</span>
+        </div>
+        <h3><a href="#">Cloud Security Best Practices for 2025</a></h3>
+        <p class="blog-excerpt">Essential security practices for AWS, Azure, GCP, and Oracle Cloud infrastructure.</p>
+        <span class="read-more" style="opacity: 0.5; cursor: not-allowed;">Coming soon</span>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <div class="blog-card-content">
+        <div class="blog-meta">
+          <span class="blog-tag">Tutorial</span>
+          <span>Coming Soon</span>
+        </div>
+        <h3><a href="#">Integrating Security Scanning in CI/CD Pipelines</a></h3>
+        <p class="blog-excerpt">Step-by-step guide to integrate Vijenex tools with GitHub Actions, Jenkins, and Azure DevOps.</p>
+        <span class="read-more" style="opacity: 0.5; cursor: not-allowed;">Coming soon</span>
+      </div>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="../assets/logo-icon.png" alt="Vijenex" class="footer-logo">
+          <p>Vijenex<sup>™</sup></p>
+          <p class="footer-tagline">Enterprise Security Automation</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Products</h4>
+            <a href="/#tools">Security Tools</a>
+            <a href="/#integrations">Integrations</a>
+            <a href="/blog/">Blog</a>
+          </div>
+          <div class="footer-col">
+            <h4>Community</h4>
+            <a href="https://github.com/vijenex" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="/#contribute">Contribute</a>
+            <a href="https://github.com/vijenex/vijenex.github.io/issues" target="_blank" rel="noopener noreferrer">Report Issues</a>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <p class="footer-text">Trademark App No. 7368905</p>
+            <p class="footer-text">Class 9 • India</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Vijenex™. All rights reserved. Licensed under MIT.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/script.js"></script>
 </body>
 </html>

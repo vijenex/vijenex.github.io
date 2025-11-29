@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BLOG_TITLE — Vijenex™ Blog</title>
+  <meta name="description" content="BLOG_DESCRIPTION" />
+  <link rel="icon" href="../assets/logo-icon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css" />
+  <style>
+    .blog-post { max-width: 800px; margin: 0 auto; padding: 60px 24px; }
+    .blog-post h1 { font-size: 42px; margin-bottom: 16px; }
+    .blog-meta { color: var(--text-secondary); margin-bottom: 32px; display: flex; gap: 16px; }
+    .blog-content { line-height: 1.8; }
+    .blog-content h2 { margin-top: 40px; margin-bottom: 16px; font-size: 32px; }
+    .blog-content h3 { margin-top: 32px; margin-bottom: 12px; font-size: 24px; }
+    .blog-content p { margin-bottom: 20px; color: var(--text-secondary); }
+    .blog-content code { background: var(--bg-card); padding: 2px 8px; border-radius: 4px; font-size: 14px; }
+    .blog-content pre { background: var(--bg-card); padding: 20px; border-radius: 8px; overflow-x: auto; margin: 24px 0; }
+    .blog-content ul, .blog-content ol { margin-bottom: 20px; padding-left: 24px; color: var(--text-secondary); }
+    .blog-content li { margin-bottom: 8px; }
+    .author-box { background: var(--bg-card); padding: 24px; border-radius: 12px; margin-top: 48px; border: 1px solid var(--border-color); }
+  </style>
+</head>
+<body class="theme-dark">
+  <header class="topbar">
+    <div class="inner">
+      <a class="brand" href="/">
+        <img src="../assets/logo-icon.png" alt="Vijenex" class="logo-icon">
+        <span class="brand-text">Vijenex<sup>™</sup></span>
+      </a>
+      <nav class="nav">
+        <a href="/#tools">Tools</a>
+        <a href="/#integrations">Integrations</a>
+        <a href="/blog/">Blog</a>
+        <a href="/#contribute">Contribute</a>
+        <a class="btn small" href="https://github.com/vijenex" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <button id="themeToggle" aria-label="Toggle theme" class="theme-btn">☀️</button>
+      </nav>
+    </div>
+  </header>
+
+  <article class="blog-post">
+    <h1>BLOG_TITLE</h1>
+    <div class="blog-meta">
+      <span>📅 PUBLISH_DATE</span>
+      <span>👤 AUTHOR_NAME</span>
+      <span>⏱️ READ_TIME min read</span>
+    </div>
+
+    <div class="blog-content">
+      <!-- START WRITING YOUR BLOG CONTENT HERE -->
+      
+      <p>Introduction paragraph goes here...</p>
+
+      <h2>Section Heading</h2>
+      <p>Your content here...</p>
+
+      <h3>Subsection</h3>
+      <p>More content...</p>
+
+      <pre><code>// Code example
+function example() {
+  console.log("Hello World");
+}</code></pre>
+
+      <ul>
+        <li>Bullet point 1</li>
+        <li>Bullet point 2</li>
+        <li>Bullet point 3</li>
+      </ul>
+
+      <!-- END BLOG CONTENT -->
+    </div>
+
+    <div class="author-box">
+      <h3>About the Author</h3>
+      <p><strong>AUTHOR_NAME</strong> - AUTHOR_BIO</p>
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="../assets/logo-icon.png" alt="Vijenex" class="footer-logo">
+          <p>Vijenex<sup>™</sup></p>
+          <p class="footer-tagline">Enterprise Security Automation</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Products</h4>
+            <a href="/#tools">Security Tools</a>
+            <a href="/#integrations">Integrations</a>
+            <a href="/blog/">Blog</a>
+          </div>
+          <div class="footer-col">
+            <h4>Community</h4>
+            <a href="https://github.com/vijenex" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="/#contribute">Contribute</a>
+            <a href="https://github.com/vijenex/vijenex.github.io/issues" target="_blank" rel="noopener noreferrer">Report Issues</a>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <p class="footer-text">Trademark App No. 7368905</p>
+            <p class="footer-text">Class 9 • India</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Vijenex™. All rights reserved. Licensed under MIT.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/script.js"></script>
+</body>
+</html>
