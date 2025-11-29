@@ -34,10 +34,14 @@ git commit -m "Publish blog: Title"
 git push origin main
 ```
 
-### Step 5: Close Issue
-1. Comment on issue: "✅ Published at https://vijenex.github.io/blog/your-post.html"
-2. Add label: `published`
-3. Close issue
+### Step 5: Close Issue Automatically
+1. In commit message, add: `Closes #ISSUE_NUMBER`
+2. Example: `git commit -m "Publish blog: Title\n\nCloses #1"`
+3. When pushed, GitHub auto-closes issue with link to commit
+
+**OR manually:**
+1. Comment: "✅ Published at https://vijenex.github.io/blog/your-post.html"
+2. Close issue
 
 ---
 
