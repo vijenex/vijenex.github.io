@@ -1,0 +1,162 @@
+name: Auto-Publish Blog
+
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  publish:
+    if: |
+      github.event.issue.labels[0].name == 'blog-submission' &&
+      contains(github.event.comment.body, '/publish') &&
+      (github.event.comment.user.login == 'skorra-nykaa' || github.event.comment.user.login == 'vijenex')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Get issue data
+        id: issue
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const issue = await github.rest.issues.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number
+            });
+            
+            const body = issue.data.body;
+            const title = body.match(/### Blog Title\s*\n\s*(.+)/)?.[1] || 'Untitled';
+            const category = body.match(/### Category\s*\n\s*(.+)/)?.[1] || 'Announcement';
+            const author = body.match(/### Author Name\s*\n\s*(.+)/)?.[1] || issue.data.user.login;
+            const bio = body.match(/### Short Bio\s*\n\s*(.+)/)?.[1] || '';
+            const showGithub = body.includes('- [x] Yes, show my GitHub username');
+            const content = body.match(/### Blog Content \(Markdown\)\s*\n\s*```markdown\s*\n([\s\S]+?)\n```/)?.[1] || '';
+            
+            const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+            const date = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+            const githubUser = issue.data.user.login;
+            
+            core.setOutput('title', title);
+            core.setOutput('category', category);
+            core.setOutput('author', author);
+            core.setOutput('bio', bio);
+            core.setOutput('showGithub', showGithub);
+            core.setOutput('content', content);
+            core.setOutput('slug', slug);
+            core.setOutput('date', date);
+            core.setOutput('githubUser', githubUser);
+            core.setOutput('issueNumber', context.issue.number);
+      
+      - name: Convert Markdown to HTML
+        id: convert
+        run: |
+          npm install -g marked
+          echo '${{ steps.issue.outputs.content }}' | marked > /tmp/content.html
+      
+      - name: Create blog post
+        run: |
+          AUTHOR="${{ steps.issue.outputs.showGithub == 'true' && format('@{0}', steps.issue.outputs.githubUser) || steps.issue.outputs.author }}"
+          BIO="${{ steps.issue.outputs.bio }}"
+          
+          cat > blog/${{ steps.issue.outputs.slug }}.html << 'EOF'
+          <!doctype html>
+          <html lang="en">
+          <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width,initial-scale=1" />
+            <title>${{ steps.issue.outputs.title }} — Vijenex™ Blog</title>
+            <link rel="icon" href="../assets/logo-icon.png" />
+            <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="../assets/style.css" />
+            <link rel="stylesheet" href="../assets/blog.css" />
+          </head>
+          <body class="theme-dark">
+            <header class="topbar">
+              <div class="inner">
+                <a class="brand" href="/">
+                  <img src="../assets/logo-icon.png" alt="Vijenex" class="logo-icon">
+                  <span class="brand-text">Vijenex<sup>™</sup></span>
+                </a>
+                <nav class="nav">
+                  <a href="/#tools">Tools</a>
+                  <a href="/#integrations">Integrations</a>
+                  <a href="/blog/">Blog</a>
+                  <a href="/#contribute">Contribute</a>
+                  <a class="btn small" href="https://github.com/vijenex" target="_blank" rel="noopener noreferrer">GitHub</a>
+                  <button id="themeToggle" aria-label="Toggle theme" class="theme-btn">☀️</button>
+                </nav>
+              </div>
+            </header>
+            <article class="blog-post">
+              <h1>${{ steps.issue.outputs.title }}</h1>
+              <div class="blog-meta">
+                <span class="blog-tag">${{ steps.issue.outputs.category }}</span>
+                <span>📅 ${{ steps.issue.outputs.date }}</span>
+                <span>👤 ${AUTHOR}</span>
+              </div>
+              <div class="blog-content">
+          EOF
+          
+          cat /tmp/content.html >> blog/${{ steps.issue.outputs.slug }}.html
+          
+          cat >> blog/${{ steps.issue.outputs.slug }}.html << 'EOF'
+                <div class="author-box">
+                  <h3>About the Author</h3>
+                  <p><strong>${AUTHOR}</strong>${BIO:+ - ${BIO}}</p>
+                </div>
+              </div>
+            </article>
+            <footer class="site-footer">
+              <div class="container">
+                <div class="footer-bottom">
+                  <p>© 2025 Vijenex™. All rights reserved. <a href="/blog/">← Back to Blog</a></p>
+                </div>
+              </div>
+            </footer>
+            <script src="../assets/script.js"></script>
+          </body>
+          </html>
+          EOF
+      
+      - name: Update blog index
+        run: |
+          EXCERPT=$(echo '${{ steps.issue.outputs.content }}' | head -c 150 | sed 's/[#*`]//g')
+          
+          sed -i '/<div class="blog-grid">/a\
+            <article class="blog-card">\
+              <div class="blog-card-content">\
+                <div class="blog-meta">\
+                  <span class="blog-tag">${{ steps.issue.outputs.category }}</span>\
+                  <span>${{ steps.issue.outputs.date }}</span>\
+                </div>\
+                <h3><a href="${{ steps.issue.outputs.slug }}.html">${{ steps.issue.outputs.title }}</a></h3>\
+                <p class="blog-excerpt">'"${EXCERPT}"'...</p>\
+                <a href="${{ steps.issue.outputs.slug }}.html" class="read-more">Read more →</a>\
+              </div>\
+            </article>' blog/index.html
+      
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add blog/
+          git commit -m "Publish blog: ${{ steps.issue.outputs.title }}
+
+          Closes #${{ steps.issue.outputs.issueNumber }}"
+          git push
+      
+      - name: Comment on issue
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: '✅ Blog published at https://vijenex.github.io/blog/${{ steps.issue.outputs.slug }}.html'
+            });
