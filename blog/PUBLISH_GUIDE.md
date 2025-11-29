@@ -20,9 +20,9 @@ When someone submits a blog via GitHub Issue:
 2. Update metadata:
    - Title (from issue)
    - Date (today's date)
-   - Author name (from issue)
+   - Author: Use **GitHub issue author's username** (shown at top of issue)
    - Category tag (from issue)
-   - GitHub username (if they checked "show username")
+   - Show GitHub username if they checked the box
 
 ### Step 4: Save & Publish
 1. Save file as: `blog/blog-title-slug.html`
