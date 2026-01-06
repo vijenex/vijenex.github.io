@@ -247,6 +247,8 @@ a { text-decoration: none; color: inherit; }
   margin-bottom: 24px;
   color: var(--text-primary); /* White for headings */
   letter-spacing: -0.02em;
+  text-align: center; /* Keep headline centered */
+  width: 100%; /* Full width for centering */
 }
 
 .sub {
