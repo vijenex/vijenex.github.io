@@ -217,6 +217,10 @@ a { text-decoration: none; color: inherit; }
   border: 3px solid #ff6b35; /* Orange border exactly on image border */
   border-radius: 8px;
   box-sizing: border-box;
+  display: block;
+  margin: 0;
+  padding: 0;
+  outline: none;
 }
 
 .theme-light .hero-bg-logo {
