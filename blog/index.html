@@ -99,9 +99,8 @@
       </a>
       <nav class="nav">
         <a href="/#tools">Tools</a>
-        <a href="/#integrations">Integrations</a>
         <a href="/blog/">Blog</a>
-        <a href="/#contribute">Contribute</a>
+        <a href="/contribute.html">Write</a>
         <a class="btn small" href="https://github.com/vijenex" target="_blank" rel="noopener noreferrer">GitHub</a>
         <button id="themeToggle" aria-label="Toggle theme" class="theme-btn">Theme</button>
       </nav>
@@ -115,31 +114,6 @@
 
   <div class="blog-grid" id="blogGrid">
     <!-- Published posts will be dynamically inserted here -->
-    
-    <!-- Coming Soon posts (static) -->
-    <article class="blog-card">
-      <div class="blog-card-content">
-        <div class="blog-meta">
-          <span class="blog-tag">Security</span>
-          <span>Coming Soon</span>
-        </div>
-        <h3><a href="#">Cloud Security Best Practices for 2025</a></h3>
-        <p class="blog-excerpt">Essential security practices for AWS, Azure, GCP, and Oracle Cloud infrastructure.</p>
-        <span class="read-more" style="opacity: 0.5; cursor: not-allowed;">Coming soon</span>
-      </div>
-    </article>
-
-    <article class="blog-card">
-      <div class="blog-card-content">
-        <div class="blog-meta">
-          <span class="blog-tag">Tutorial</span>
-          <span>Coming Soon</span>
-        </div>
-        <h3><a href="#">Integrating Security Scanning in CI/CD Pipelines</a></h3>
-        <p class="blog-excerpt">Step-by-step guide to integrate Vijenex tools with GitHub Actions, Jenkins, and Azure DevOps.</p>
-        <span class="read-more" style="opacity: 0.5; cursor: not-allowed;">Coming soon</span>
-      </div>
-    </article>
   </div>
 
   <footer class="site-footer">
@@ -216,9 +190,9 @@
           // Sort by date (newest first)
           publishedPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
           
-          // Insert cards at the beginning of the grid (before "Coming Soon" posts)
+          // Insert cards into the grid
           const cardsHTML = publishedPosts.map(createBlogCard).join('');
-          blogGrid.insertAdjacentHTML('afterbegin', cardsHTML);
+          blogGrid.insertAdjacentHTML('beforeend', cardsHTML);
         })
         .catch(error => {
           console.error('Error loading blog posts:', error);
