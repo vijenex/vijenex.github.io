@@ -110,7 +110,7 @@
   <div class="blog-header">
     <h1>Vijenex™ Blog</h1>
     <p>Security insights, research, and best practices from our team and community</p>
-    <p style="margin-top: 16px; font-size: 14px; color: var(--text-secondary);">All blog content is hosted on <a href="https://medium.com/@vijenex" target="_blank" rel="noopener noreferrer" style="color: var(--accent-primary);">Medium</a>. Click any post to read the full article.</p>
+    <p style="margin-top: 16px; font-size: 14px; color: var(--text-secondary);">Blog content is hosted on <a href="https://vijenex.hashnode.dev" target="_blank" rel="noopener noreferrer" style="color: var(--accent-primary);">Hashnode</a> and <a href="https://medium.com/@vijenex" target="_blank" rel="noopener noreferrer" style="color: var(--accent-primary);">Medium</a>. Click any post to read the full article.</p>
   </div>
 
   <div class="blog-grid" id="blogGrid">
@@ -166,7 +166,11 @@
       
       // Create blog card HTML
       function createBlogCard(post) {
-        const mediumUrl = post.mediumUrl || post.url || '#';
+        // Hashnode is primary, Medium is secondary
+        const blogUrl = post.hashnodeUrl || post.mediumUrl || post.url || '#';
+        const platform = post.hashnodeUrl ? 'Hashnode' : (post.mediumUrl ? 'Medium' : 'External');
+        const platformBadge = post.hashnodeUrl ? 'Read on Hashnode' : (post.mediumUrl ? 'Read on Medium' : 'Read more');
+        
         return `
           <article class="blog-card">
             <div class="blog-card-content">
@@ -174,9 +178,9 @@
                 <span class="blog-tag">${post.category}</span>
                 <span>${formatDate(post.date)}</span>
               </div>
-              <h3><a href="${mediumUrl}" target="_blank" rel="noopener noreferrer">${post.title}</a></h3>
+              <h3><a href="${blogUrl}" target="_blank" rel="noopener noreferrer">${post.title}</a></h3>
               <p class="blog-excerpt">${post.excerpt}</p>
-              <a href="${mediumUrl}" target="_blank" rel="noopener noreferrer" class="read-more">Read on Medium →</a>
+              <a href="${blogUrl}" target="_blank" rel="noopener noreferrer" class="read-more platform-badge">${platformBadge} →</a>
             </div>
           </article>
         `;
