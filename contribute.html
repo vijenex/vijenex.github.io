@@ -47,88 +47,46 @@
               <li><strong>Add to Website Listing:</strong> Manually add the blog entry to <code>blog/_data/posts.json</code> with both URLs</li>
             </ol>
 
-            <h3>Step 1: Choose Your Format</h3>
-            <p>You can write blog posts in either format:</p>
-            <ul>
-              <li><strong>HTML:</strong> Use the template at <code>templates-static/blog-post.html</code></li>
-              <li><strong>Markdown:</strong> Write in Markdown, then convert to HTML using the <a href="tools/markdown-to-html.html">Markdown to HTML tool</a></li>
-            </ul>
-
-            <h3>Step 2: Create Your Blog Post</h3>
-            <p>Follow this folder structure:</p>
-            <pre><code>blog/
-  posts/
-    YYYY/
-      MM/
-        your-post-slug/
-          index.html
-          meta.json</code></pre>
-
-            <p><strong>Example:</strong> For a post published in November 2025 with slug "my-security-tips":</p>
-            <pre><code>blog/posts/2025/11/my-security-tips/index.html
-blog/posts/2025/11/my-security-tips/meta.json</code></pre>
-
-            <h3>Step 3: Create the HTML File</h3>
-            <p>Copy the template from <code>templates-static/blog-post.html</code> and fill in:</p>
-            <ul>
-              <li>Title (replace <code>BLOG_TITLE</code>)</li>
-              <li>Content (write your blog post)</li>
-              <li>Meta tags (SEO information)</li>
-              <li>Author information</li>
-            </ul>
-
-            <h3>Step 4: Create the meta.json File</h3>
-            <p>Create a <code>meta.json</code> file with this structure:</p>
+            <h3>Step 1: Add Blog Entry to posts.json</h3>
+            <p>Add your blog post entry to <code>blog/_data/posts.json</code>:</p>
             <pre><code>{
-  "id": "your-post-slug",
   "title": "Your Blog Post Title",
+  "slug": "your-post-slug",
   "date": "2025-11-28",
   "category": "Security",
-  "excerpt": "A brief description of your post.",
   "author": "Your Name",
-  "readTime": "5 min read",
-  "url": "posts/2025/11/your-post-slug/index.html",
-  "published": true
+  "excerpt": "A brief 1-2 line description of your post.",
+  "tags": ["security", "devops"],
+  "readTime": 5,
+  "published": true,
+  "hashnodeUrl": "https://vijenex.hashnode.dev/your-post-slug",
+  "mediumUrl": "https://medium.com/@vijenex/your-post-slug"
 }</code></pre>
 
-            <h3>Step 5: Add Images (Optional)</h3>
-            <p>Place images in:</p>
-            <pre><code>blog/posts/2025/11/your-post-slug/images/</code></pre>
-            <p>Reference them in your HTML as:</p>
-            <pre><code>&lt;img src="images/your-image.png" alt="Description"&gt;</code></pre>
+            <p><strong>Important:</strong></p>
+            <ul>
+              <li><strong>hashnodeUrl</strong> is primary (required if available)</li>
+              <li><strong>mediumUrl</strong> is secondary (optional, for cross-posting)</li>
+              <li>If both URLs are provided, Hashnode will be used as the primary link</li>
+              <li>The platform badge will automatically show "Read on Hashnode" or "Read on Medium"</li>
+            </ul>
 
-            <h3>Step 6: Update posts.json</h3>
-            <p>Add your post metadata to <code>blog/_data/posts.json</code>:</p>
-            <pre><code>[
-  {
-    "id": "your-post-slug",
-    "title": "Your Blog Post Title",
-    "date": "2025-11-28",
-    "category": "Security",
-    "excerpt": "A brief description.",
-    "author": "Your Name",
-    "readTime": "5 min read",
-    "url": "posts/2025/11/your-post-slug/index.html",
-    "published": true
-  }
-]</code></pre>
-
-            <h3>Step 7: Submit via GitHub</h3>
+            <h3>Step 2: Submit via GitHub</h3>
             <ol>
               <li>Fork the <a href="https://github.com/vijenex/vijenex.github.io" target="_blank" rel="noopener noreferrer">vijenex.github.io repository</a></li>
               <li>Create a new branch: <code>git checkout -b blog/your-post-slug</code></li>
-              <li>Add your files: <code>git add blog/posts/2025/11/your-post-slug/</code></li>
+              <li>Edit <code>blog/_data/posts.json</code> and add your blog entry</li>
               <li>Commit: <code>git commit -m "Add blog post: Your Title"</code></li>
               <li>Push: <code>git push origin blog/your-post-slug</code></li>
               <li>Create a Pull Request on GitHub</li>
             </ol>
 
-            <h3>Step 8: Review Process</h3>
+            <h3>Step 3: Review Process</h3>
             <p>After submitting your PR:</p>
             <ul>
-              <li>The Vijenex team will review your post</li>
-              <li>We may suggest edits or improvements</li>
-              <li>Once approved, your post will be merged and published</li>
+              <li>The Vijenex team will review your blog entry</li>
+              <li>Once approved, your post will be merged and appear on the website</li>
+              <li>The blog card will link to your Hashnode or Medium article</li>
             </ul>
 
             <h2>Contributing Code</h2>
