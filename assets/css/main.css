@@ -214,13 +214,14 @@ a { text-decoration: none; color: inherit; }
   opacity: 0.6;
   pointer-events: none;
   z-index: 0;
-  border: 3px solid #ff6b35; /* Orange border exactly on image border */
-  border-radius: 8px;
-  box-sizing: border-box;
   display: block;
   margin: 0;
   padding: 0;
-  outline: none;
+  border: none;
+  outline: 3px solid #ff6b35; /* Orange border exactly on image edge */
+  outline-offset: 0;
+  border-radius: 8px;
+  box-sizing: border-box;
 }
 
 .theme-light .hero-bg-logo {
