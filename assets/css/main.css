@@ -28,14 +28,12 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
+html, body {
+  height: 100%;
+}
+
 body {
-  /* Global website background image - full width, subtle, not distracting */
   background: var(--bg-primary);
-  background-image: url('../images/logos/Image_20260106_174538_837.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   color: var(--text-body); /* Off-white for body text - WCAG compliant */
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
@@ -45,24 +43,19 @@ body {
   position: relative;
 }
 
-/* Overlay to control background image transparency and ensure readability */
+/* Global website background image - applied to ALL pages at root level */
 body::before {
-  content: '';
+  content: "";
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--bg-primary);
-  opacity: 0.5; /* 50% transparency - background image shows through */
+  inset: 0;
+  background-image: url('../images/logos/Image_20260106_174538_837.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  opacity: 0.5; /* 50% transparency - image visible behind all content */
   z-index: -1;
   pointer-events: none;
-}
-
-/* Light theme background adjustments */
-.theme-light body::before {
-  background: var(--bg-primary);
-  opacity: 0.5;
 }
 
 /* Professional Typography - Clear Hierarchy */
