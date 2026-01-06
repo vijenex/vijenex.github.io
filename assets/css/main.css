@@ -195,13 +195,15 @@ a { text-decoration: none; color: inherit; }
 /* HERO */
 .hero {
   padding: 100px 24px;
+  min-height: 100vh; /* Ensure full height coverage */
   text-align: center;
   background: transparent; /* Allow global background image to show through */
   position: relative;
-  overflow: hidden;
+  overflow: visible; /* Allow background to extend fully */
   border-bottom: 1px solid var(--border-color);
 }
 
+/* Orange border ONLY on the robot woman image - no container wrapping */
 .hero-bg-logo {
   position: absolute;
   top: 60%;
@@ -217,9 +219,10 @@ a { text-decoration: none; color: inherit; }
   display: block;
   margin: 0;
   padding: 0;
-  border: 3px solid #ff6b35; /* Orange border exactly on image edge */
+  /* Orange border ONLY on this image element - not on any container */
+  border: 3px solid #ff6b35;
   border-radius: 8px;
-  box-sizing: content-box; /* Border outside content, exactly on image edge */
+  box-sizing: content-box;
   vertical-align: top;
 }
 
