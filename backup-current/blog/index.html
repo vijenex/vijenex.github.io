@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Blog — Vijenex™</title>
   <meta name="description" content="Security insights, research, and best practices from the Vijenex™ team and community." />
-  <link rel="icon" href="../assets/images/logos/logo-icon.png" />
+  <link rel="icon" href="../assets/logo-icon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="stylesheet" href="../assets/style.css" />
   <style>
     .blog-header {
       padding: 60px 24px 40px;
@@ -89,13 +89,10 @@
   </style>
 </head>
 <body class="theme-dark">
-  <!-- Animated Circuit Background -->
-  <canvas id="circuitCanvas" class="circuit-bg"></canvas>
-  
   <header class="topbar">
     <div class="inner">
       <a class="brand" href="/">
-        <img src="../assets/images/logos/logo-icon.png" alt="Vijenex" class="logo-icon">
+        <img src="../assets/logo-icon.png" alt="Vijenex" class="logo-icon">
         <span class="brand-text">Vijenex<sup>™</sup></span>
       </a>
       <nav class="nav">
@@ -114,10 +111,31 @@
     <p>Security insights, research, and best practices from our team and community</p>
   </div>
 
-  <div class="blog-grid" id="blogGrid">
-    <!-- Published posts will be dynamically inserted here -->
-    
-    <!-- Coming Soon posts (static) -->
+  <div class="blog-grid">
+    <article class="blog-card">
+      <div class="blog-card-content">
+        <div class="blog-meta">
+          <span class="blog-tag">Announcement</span>
+          <span>Nov 28, 2025</span>
+        </div>
+        <h3><a href="post-announce-launch.html">Launching Vijenex™ — Mission & Roadmap</a></h3>
+        <p class="blog-excerpt">Introducing Vijenex™, our mission to build enterprise-grade open-source security automation tools for modern DevSecOps teams.</p>
+        <a href="post-announce-launch.html" class="read-more">Read more →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <div class="blog-card-content">
+        <div class="blog-meta">
+          <span class="blog-tag">Technical</span>
+          <span>Nov 25, 2025</span>
+        </div>
+        <h3><a href="post-cis-scanner.html">Windows CIS Scanner — Design & Architecture</a></h3>
+        <p class="blog-excerpt">Deep dive into the architecture and design decisions behind our Windows CIS compliance scanner.</p>
+        <a href="post-cis-scanner.html" class="read-more">Read more →</a>
+      </div>
+    </article>
+
     <article class="blog-card">
       <div class="blog-card-content">
         <div class="blog-meta">
@@ -147,9 +165,9 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-brand">
-          <img src="../assets/images/logos/logo-icon.png" alt="Vijenex" class="footer-logo">
+          <img src="../assets/logo-icon.png" alt="Vijenex" class="footer-logo">
           <p>Vijenex<sup>™</sup></p>
-          <p class="footer-tagline">Open Cybersecurity Initiative</p>
+          <p class="footer-tagline">Enterprise Security Automation</p>
         </div>
         <div class="footer-links">
           <div class="footer-col">
@@ -177,54 +195,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/main.js"></script>
-  <script>
-    // Load and render blog posts from JSON
-    (function() {
-      const blogGrid = document.getElementById('blogGrid');
-      
-      // Format date: "2025-11-28" -> "Nov 28, 2025"
-      function formatDate(dateStr) {
-        const date = new Date(dateStr);
-        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-        return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
-      }
-      
-      // Create blog card HTML
-      function createBlogCard(post) {
-        return `
-          <article class="blog-card">
-            <div class="blog-card-content">
-              <div class="blog-meta">
-                <span class="blog-tag">${post.category}</span>
-                <span>${formatDate(post.date)}</span>
-              </div>
-              <h3><a href="${post.url}">${post.title}</a></h3>
-              <p class="blog-excerpt">${post.excerpt}</p>
-              <a href="${post.url}" class="read-more">Read more →</a>
-            </div>
-          </article>
-        `;
-      }
-      
-      // Load posts.json and render published posts
-      fetch('_data/posts.json')
-        .then(response => response.json())
-        .then(posts => {
-          // Filter only published posts
-          const publishedPosts = posts.filter(post => post.published === true);
-          
-          // Sort by date (newest first)
-          publishedPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
-          
-          // Insert cards at the beginning of the grid (before "Coming Soon" posts)
-          const cardsHTML = publishedPosts.map(createBlogCard).join('');
-          blogGrid.insertAdjacentHTML('afterbegin', cardsHTML);
-        })
-        .catch(error => {
-          console.error('Error loading blog posts:', error);
-        });
-    })();
-  </script>
+  <script src="../assets/script.js"></script>
 </body>
 </html>

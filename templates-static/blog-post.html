@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- ============================================
+       TITLE & SEO META TAGS
+       ============================================ -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  
+  <!-- REQUIRED: Update these meta tags for SEO -->
+  <title>BLOG_TITLE — Vijenex™ Blog</title>
+  <meta name="description" content="BLOG_DESCRIPTION" />
+  
+  <!-- OpenGraph tags for social sharing -->
+  <meta property="og:title" content="BLOG_TITLE" />
+  <meta property="og:description" content="BLOG_DESCRIPTION" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://vijenex.github.io/blog/posts/YYYY/MM/slug/index.html" />
+  <!-- Add og:image when you have a featured image -->
+  <!-- <meta property="og:image" content="https://vijenex.github.io/assets/images/blog/your-image.png" /> -->
+  
+  <!-- Twitter Card tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="BLOG_TITLE" />
+  <meta name="twitter:description" content="BLOG_DESCRIPTION" />
+  <!-- <meta name="twitter:image" content="https://vijenex.github.io/assets/images/blog/your-image.png" /> -->
+  
+  <!-- Favicon -->
+  <link rel="icon" href="../../../../assets/images/logos/logo-icon.png" />
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../../../assets/css/main.css" />
+  <link rel="stylesheet" href="../../../../assets/css/blog.css" />
+</head>
+<body class="theme-dark">
+  <!-- ============================================
+       HEADER NAVIGATION
+       ============================================ -->
+  <header class="topbar">
+    <div class="inner">
+      <a class="brand" href="../../../../">
+        <img src="../../../../assets/images/logos/logo-icon.png" alt="Vijenex" class="logo-icon">
+        <span class="brand-text">Vijenex<sup>™</sup></span>
+      </a>
+      <nav class="nav">
+        <a href="../../../../#tools">Tools</a>
+        <a href="../../../../#integrations">Integrations</a>
+        <a href="../../index.html">Blog</a>
+        <a href="../../../../#contribute">Contribute</a>
+        <a class="btn small" href="https://github.com/vijenex" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <button id="themeToggle" aria-label="Toggle theme" class="theme-btn">☀️</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============================================
+       BLOG POST ARTICLE
+       ============================================ -->
+  <article class="blog-post">
+    
+    <!-- ============================================
+         POST TITLE
+         ============================================ -->
+    <h1>BLOG_TITLE</h1>
+    
+    <!-- ============================================
+         POST META (Date, Category, Author, Read Time)
+         ============================================ -->
+    <div class="blog-meta">
+      <span>📅 PUBLISH_DATE</span>
+      <span>🏷️ CATEGORY</span>
+      <span>👤 AUTHOR_NAME</span>
+      <span>⏱️ READ_TIME min read</span>
+    </div>
+
+    <!-- ============================================
+         BLOG CONTENT BODY
+         ============================================ -->
+    <div class="blog-content">
+      
+      <!-- START WRITING YOUR BLOG CONTENT HERE -->
+      
+      <!-- Introduction paragraph -->
+      <p>Your introduction paragraph goes here. This should hook the reader and provide context for what they're about to read.</p>
+      
+      <!-- Main section heading (h2) -->
+      <h2>Main Section Heading</h2>
+      <p>Paragraph text goes here. Use semantic HTML elements for better SEO and accessibility.</p>
+      
+      <!-- Subsection heading (h3) -->
+      <h3>Subsection Heading</h3>
+      <p>More detailed content in subsections.</p>
+      
+      <!-- ============================================
+           IMAGES (Like Medium - between text)
+           ============================================ -->
+      <!-- Single image with optional caption -->
+      <figure class="blog-image">
+        <img src="../../../../assets/images/blog/your-image.png" alt="Descriptive alt text for accessibility and SEO" />
+        <figcaption>Optional caption explaining the image</figcaption>
+      </figure>
+      
+      <!-- Image without caption -->
+      <figure class="blog-image">
+        <img src="../../../../assets/images/blog/another-image.png" alt="Alt text describing the image" />
+      </figure>
+      
+      <!-- ============================================
+           CODE BLOCKS
+           ============================================ -->
+      <!-- Inline code -->
+      <p>Use <code>inline code</code> for short code snippets, function names, or technical terms.</p>
+      
+      <!-- Code block with syntax highlighting (optional language class) -->
+      <pre><code class="language-python"># Code block example
+def example_function():
+    """This is a code block."""
+    return "Hello, World!"
+</code></pre>
+      
+      <!-- ============================================
+           LISTS
+           ============================================ -->
+      <!-- Unordered list (bullet points) -->
+      <ul>
+        <li>First bullet point</li>
+        <li>Second bullet point</li>
+        <li>Third bullet point with <strong>bold text</strong></li>
+      </ul>
+      
+      <!-- Ordered list (numbered) -->
+      <ol>
+        <li>First numbered item</li>
+        <li>Second numbered item</li>
+        <li>Third numbered item</li>
+      </ol>
+      
+      <!-- ============================================
+           BLOCKQUOTES
+           ============================================ -->
+      <blockquote>
+        <p>This is a blockquote. Use it for quotes, important callouts, or highlighting key information.</p>
+      </blockquote>
+      
+      <!-- ============================================
+           LINKS
+           ============================================ -->
+      <p>Link to external resources: <a href="https://example.com" target="_blank" rel="noopener noreferrer">Example Link</a></p>
+      
+      <!-- ============================================
+           NESTED CONTENT
+           ============================================ -->
+      <h2>Another Main Section</h2>
+      <p>You can nest content as needed:</p>
+      
+      <h3>Subsection 1</h3>
+      <p>Content for subsection 1.</p>
+      
+      <h3>Subsection 2</h3>
+      <p>Content for subsection 2.</p>
+      
+      <h4>Sub-subsection (h4)</h4>
+      <p>Use h4 for deeper nesting if needed.</p>
+      
+      <!-- END BLOG CONTENT -->
+    </div>
+    
+    <!-- ============================================
+         AUTHOR BOX (Optional)
+         ============================================ -->
+    <div class="author-box">
+      <h3>About the Author</h3>
+      <p><strong>AUTHOR_NAME</strong> — AUTHOR_BIO</p>
+    </div>
+  </article>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="../../../../assets/images/logos/logo-icon.png" alt="Vijenex" class="footer-logo">
+          <p>Vijenex<sup>™</sup></p>
+          <p class="footer-tagline">Enterprise Security Automation</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Products</h4>
+            <a href="../../../../#tools">Security Tools</a>
+            <a href="../../../../#integrations">Integrations</a>
+            <a href="../../index.html">Blog</a>
+          </div>
+          <div class="footer-col">
+            <h4>Community</h4>
+            <a href="https://github.com/vijenex" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="../../../../#contribute">Contribute</a>
+            <a href="https://github.com/vijenex/vijenex.github.io/issues" target="_blank" rel="noopener noreferrer">Report Issues</a>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <p class="footer-text">Trademark App No. 7368905</p>
+            <p class="footer-text">Class 9 • India</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Vijenex™. All rights reserved. Licensed under MIT.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       SCRIPTS
+       ============================================ -->
+  <script src="../../../../assets/js/main.js"></script>
+</body>
+</html>
+

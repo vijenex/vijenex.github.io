@@ -4,49 +4,73 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Markdown to HTML Converter - Vijenex™</title>
+  <link rel="icon" href="../assets/images/logos/logo-icon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/main.css" />
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', sans-serif; background: #0a0e27; color: #e6f3ff; padding: 20px; }
-    .container { max-width: 1400px; margin: 0 auto; }
-    h1 { margin-bottom: 20px; color: #3b82f6; }
-    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
-    .panel { background: #1a1f3a; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 20px; }
-    h2 { font-size: 18px; margin-bottom: 12px; color: #8b5cf6; }
-    textarea { width: 100%; height: 500px; background: #0a0e27; color: #e6f3ff; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; padding: 12px; font-family: 'Courier New', monospace; font-size: 14px; resize: vertical; }
-    .preview { min-height: 500px; background: #0a0e27; padding: 20px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.1); overflow-x: auto; }
-    .btn { background: linear-gradient(135deg, #3b82f6, #8b5cf6); color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-weight: 600; margin-right: 10px; }
-    .btn:hover { transform: translateY(-2px); }
-    .btn-secondary { background: #1a1f3a; border: 1px solid rgba(255,255,255,0.1); }
-    .actions { margin-top: 20px; }
-    .preview h1 { font-size: 42px; margin-bottom: 16px; }
-    .preview h2 { font-size: 32px; margin-top: 40px; margin-bottom: 16px; }
-    .preview h3 { font-size: 24px; margin-top: 32px; margin-bottom: 12px; }
-    .preview p { margin-bottom: 20px; color: #9ca3af; line-height: 1.8; }
-    .preview code { background: #1a1f3a; padding: 2px 8px; border-radius: 4px; font-size: 14px; }
-    .preview pre { background: #1a1f3a; padding: 20px; border-radius: 8px; overflow-x: auto; margin: 24px 0; }
-    .preview pre code { background: none; padding: 0; }
-    .preview img { max-width: 100%; border-radius: 8px; margin: 20px 0; }
-    .preview a { color: #3b82f6; text-decoration: none; }
-    .preview a:hover { text-decoration: underline; }
-    .preview ul, .preview ol { margin-bottom: 20px; padding-left: 24px; color: #9ca3af; }
-    .preview li { margin-bottom: 8px; }
-    .preview blockquote { border-left: 4px solid #3b82f6; padding-left: 20px; margin: 20px 0; color: #9ca3af; font-style: italic; }
-    .info { background: #1a1f3a; padding: 12px; border-radius: 4px; margin-bottom: 20px; font-size: 14px; color: #9ca3af; }
-    @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
+    /* Tool-specific styles using theme variables */
+    .tool-container { max-width: 1400px; margin: 0 auto; padding: 40px 24px; }
+    .tool-container h1 { margin-bottom: 20px; color: var(--accent-primary); }
+    .tool-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+    .tool-panel { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; }
+    .tool-panel h2 { font-size: 18px; margin-bottom: 12px; color: var(--accent-secondary); }
+    .tool-textarea { width: 100%; height: 500px; background: var(--bg-primary); color: var(--text-primary); border: 1px solid var(--border-color); border-radius: 4px; padding: 12px; font-family: 'Courier New', monospace; font-size: 14px; resize: vertical; }
+    .tool-preview { min-height: 500px; background: var(--bg-primary); padding: 20px; border-radius: 4px; border: 1px solid var(--border-color); overflow-x: auto; }
+    .tool-btn { background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)); color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-weight: 600; margin-right: 10px; transition: all 0.2s; }
+    .tool-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(59,130,246,0.4); }
+    .tool-btn-secondary { background: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-primary); }
+    .tool-actions { margin-top: 20px; }
+    .tool-preview h1 { font-size: 42px; margin-bottom: 16px; color: var(--text-primary); }
+    .tool-preview h2 { font-size: 32px; margin-top: 40px; margin-bottom: 16px; color: var(--text-primary); }
+    .tool-preview h3 { font-size: 24px; margin-top: 32px; margin-bottom: 12px; color: var(--text-primary); }
+    .tool-preview p { margin-bottom: 20px; color: var(--text-secondary); line-height: 1.8; }
+    .tool-preview code { background: var(--bg-card); padding: 2px 8px; border-radius: 4px; font-size: 14px; color: var(--text-primary); border: 1px solid var(--border-color); }
+    .tool-preview pre { background: var(--bg-card); padding: 20px; border-radius: 8px; overflow-x: auto; margin: 24px 0; border: 1px solid var(--border-color); }
+    .tool-preview pre code { background: none; padding: 0; border: none; }
+    .tool-preview img { max-width: 100%; border-radius: 8px; margin: 20px 0; }
+    .tool-preview a { color: var(--accent-primary); text-decoration: none; }
+    .tool-preview a:hover { text-decoration: underline; }
+    .tool-preview ul, .tool-preview ol { margin-bottom: 20px; padding-left: 24px; color: var(--text-secondary); }
+    .tool-preview li { margin-bottom: 8px; }
+    .tool-preview blockquote { border-left: 4px solid var(--accent-primary); padding-left: 20px; margin: 20px 0; color: var(--text-secondary); font-style: italic; background: var(--bg-card); padding: 20px 24px; border-radius: 0 8px 8px 0; }
+    .tool-info { background: var(--bg-card); padding: 12px; border-radius: 4px; margin-bottom: 20px; font-size: 14px; color: var(--text-secondary); border: 1px solid var(--border-color); }
+    .tool-info a { color: var(--accent-primary); }
+    @media (max-width: 768px) { .tool-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
-<body>
-  <div class="container">
-    <h1>📝 Markdown to HTML Converter</h1>
-    <div class="info">
-      Paste Markdown content below. Copy HTML output to create blog posts. <a href="../blog/WRITING_GUIDE.md" style="color: #3b82f6;">View Writing Guide</a>
+<body class="theme-dark">
+  <!-- Animated Circuit Background -->
+  <canvas id="circuitCanvas" class="circuit-bg"></canvas>
+  
+  <header class="topbar">
+    <div class="inner">
+      <a class="brand" href="../">
+        <img src="../assets/images/logos/logo-icon.png" alt="Vijenex" class="logo-icon">
+        <span class="brand-text">Vijenex<sup>™</sup></span>
+      </a>
+      <nav class="nav">
+        <a href="../#tools">Tools</a>
+        <a href="../#integrations">Integrations</a>
+        <a href="../blog/index.html">Blog</a>
+        <a href="../#contribute">Contribute</a>
+        <a class="btn small" href="https://github.com/vijenex" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <button id="themeToggle" aria-label="Toggle theme" class="theme-btn">☀️</button>
+      </nav>
     </div>
-    
-    <div class="grid">
-      <div class="panel">
-        <h2>Markdown Input</h2>
-        <textarea id="markdown" placeholder="# Your Blog Title
+  </header>
+
+  <main>
+    <div class="tool-container">
+      <h1>📝 Markdown to HTML Converter</h1>
+      <div class="tool-info">
+        Paste Markdown content below. Copy HTML output to create blog posts. <a href="../blog/WRITING_GUIDE.md">View Writing Guide</a>
+      </div>
+      
+      <div class="tool-grid">
+        <div class="tool-panel">
+          <h2>Markdown Input</h2>
+          <textarea id="markdown" class="tool-textarea" placeholder="# Your Blog Title
 
 Write your content here..."># Sample Blog Post
 
@@ -72,20 +96,55 @@ Check out [Vijenex](https://vijenex.github.io) for more tools.
 ## Conclusion
 
 That's how you write in Markdown! 🚀</textarea>
+        </div>
+        
+        <div class="tool-panel">
+          <h2>HTML Preview</h2>
+          <div id="preview" class="tool-preview"></div>
+        </div>
       </div>
       
-      <div class="panel">
-        <h2>HTML Preview</h2>
-        <div id="preview" class="preview"></div>
+      <div class="tool-actions">
+        <button class="tool-btn" onclick="copyHTML()">📋 Copy HTML</button>
+        <button class="tool-btn tool-btn-secondary" onclick="downloadHTML()">💾 Download HTML</button>
+        <button class="tool-btn tool-btn-secondary" onclick="clearAll()">🗑️ Clear</button>
       </div>
     </div>
-    
-    <div class="actions">
-      <button class="btn" onclick="copyHTML()">📋 Copy HTML</button>
-      <button class="btn btn-secondary" onclick="downloadHTML()">💾 Download HTML</button>
-      <button class="btn btn-secondary" onclick="clearAll()">🗑️ Clear</button>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="../assets/images/logos/logo-icon.png" alt="Vijenex" class="footer-logo">
+          <p>Vijenex<sup>™</sup></p>
+          <p class="footer-tagline">Enterprise Security Automation</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Products</h4>
+            <a href="../#tools">Security Tools</a>
+            <a href="../#integrations">Integrations</a>
+            <a href="../blog/index.html">Blog</a>
+          </div>
+          <div class="footer-col">
+            <h4>Community</h4>
+            <a href="https://github.com/vijenex" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="../#contribute">Contribute</a>
+            <a href="https://github.com/vijenex/vijenex.github.io/issues" target="_blank" rel="noopener noreferrer">Report Issues</a>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <p class="footer-text">Trademark App No. 7368905</p>
+            <p class="footer-text">Class 9 • India</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Vijenex™. All rights reserved. Licensed under MIT.</p>
+      </div>
     </div>
-  </div>
+  </footer>
 
   <script>
     const markdown = document.getElementById('markdown');
@@ -109,10 +168,10 @@ That's how you write in Markdown! 🚀</textarea>
 <head>
   <meta charset="utf-8" />
   <title>Blog Post — Vijenex™</title>
-  <link rel="icon" href="../assets/logo-icon.png" />
+  <link rel="icon" href="../assets/images/logos/logo-icon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/style.css" />
-  <link rel="stylesheet" href="../assets/blog.css" />
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="stylesheet" href="../assets/css/blog.css" />
 </head>
 <body class="theme-dark">
   <article class="blog-post">
@@ -120,7 +179,7 @@ That's how you write in Markdown! 🚀</textarea>
 ${preview.innerHTML}
     </div>
   </article>
-  <script src="../assets/script.js"></script>
+  <script src="../assets/js/main.js"></script>
 </body>
 </html>`;
       
@@ -141,5 +200,6 @@ ${preview.innerHTML}
     markdown.addEventListener('input', convertMarkdown);
     convertMarkdown();
   </script>
+  <script src="../assets/js/main.js"></script>
 </body>
 </html>
