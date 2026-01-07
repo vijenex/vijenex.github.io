@@ -111,14 +111,14 @@ a { text-decoration: none; color: inherit; }
 .topbar {
   position: sticky;
   top: 0;
-  background: rgba(30, 30, 30, 0.7); /* 70% transparency for dark theme */
+  background: rgba(30, 30, 30, 0.15); /* 85% transparency for dark theme */
   border-bottom: 1px solid var(--border-color);
   backdrop-filter: blur(10px);
   z-index: 1000;
 }
 
 .theme-light .topbar {
-  background: rgba(255, 255, 255, 0.7); /* 70% transparency for light theme */
+  background: rgba(255, 255, 255, 0.15); /* 85% transparency for light theme */
 }
 
 .topbar .inner {
