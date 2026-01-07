@@ -30,7 +30,10 @@
       <nav class="nav">
         <a href="blog/index.html">Blog</a>
         <a class="btn small" href="https://github.com/vijenex" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <button id="themeToggle" aria-label="Toggle theme" class="theme-btn">Theme</button>
+        <button id="themeToggle" aria-label="Toggle theme" class="theme-btn">
+          <span class="theme-icon theme-moon">🌙</span>
+          <span class="theme-icon theme-sun" style="display: none;">⭐</span>
+        </button>
       </nav>
     </div>
   </header>
@@ -52,22 +55,45 @@
         <h2>Our Approach</h2>
         <div class="grid-4">
           <div class="feature-box">
-            <div class="icon"></div>
+            <div class="icon icon-research">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 8L30 18H42L34 26L36 38L24 32L12 38L14 26L6 18H18L24 8Z" stroke="currentColor" stroke-width="2" fill="none"/>
+                <circle cx="24" cy="24" r="3" fill="currentColor"/>
+              </svg>
+            </div>
             <h3>Security Research</h3>
             <p>Exploring emerging security challenges and developing practical solutions</p>
           </div>
           <div class="feature-box">
-            <div class="icon"></div>
+            <div class="icon icon-tools">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="12" y="12" width="24" height="24" rx="4" stroke="currentColor" stroke-width="2" fill="none"/>
+                <path d="M20 20L28 28M28 20L20 28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="24" cy="24" r="2" fill="currentColor"/>
+              </svg>
+            </div>
             <h3>Open Tools</h3>
             <p>Building and sharing security engineering tools for evolving landscapes</p>
           </div>
           <div class="feature-box">
-            <div class="icon"></div>
+            <div class="icon icon-knowledge">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 12H36V36H12V12Z" stroke="currentColor" stroke-width="2" fill="none"/>
+                <path d="M18 18H30M18 24H30M18 30H24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="32" cy="16" r="3" fill="currentColor"/>
+              </svg>
+            </div>
             <h3>Knowledge Sharing</h3>
             <p>Documenting practices, patterns, and insights from security engineering work</p>
           </div>
           <div class="feature-box">
-            <div class="icon"></div>
+            <div class="icon icon-evolution">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 24L18 14L28 24L38 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <path d="M8 34L18 24L28 34L38 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <circle cx="24" cy="24" r="2" fill="currentColor"/>
+              </svg>
+            </div>
             <h3>Evolving Focus</h3>
             <p>Adapting to new security domains and emerging threat landscapes</p>
           </div>
@@ -75,18 +101,6 @@
       </div>
     </section>
 
-    <section id="contribute" class="section contribute">
-      <div class="container">
-        <h2 class="section-title">Join the Community</h2>
-        <div class="contribute-grid">
-          <div class="contribute-card">
-            <h3>Contribute Code</h3>
-            <p>Contribute to our open-source projects and help build better security tools.</p>
-            <a class="btn secondary" href="https://github.com/vijenex" target="_blank" rel="noopener noreferrer">View Repositories</a>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer">
@@ -105,7 +119,6 @@
           <div class="footer-col">
             <h4>Community</h4>
             <a href="https://github.com/vijenex" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="#contribute">Contribute</a>
             <a href="https://github.com/vijenex/vijenex.github.io/issues" target="_blank" rel="noopener noreferrer">Report Issues</a>
           </div>
           <div class="footer-col">

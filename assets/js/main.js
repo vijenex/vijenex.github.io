@@ -41,12 +41,10 @@ function setTheme(theme) {
     if (theme === 'light') {
       document.body.classList.remove('theme-dark');
       document.body.classList.add('theme-light');
-      btn.textContent = 'Dark';
       localStorage.setItem('vj_theme', 'light');
     } else {
       document.body.classList.remove('theme-light');
       document.body.classList.add('theme-dark');
-      btn.textContent = 'Light';
       localStorage.setItem('vj_theme', 'dark');
     }
   } catch (e) {
