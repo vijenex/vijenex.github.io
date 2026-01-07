@@ -203,32 +203,6 @@ a { text-decoration: none; color: inherit; }
   border-bottom: 1px solid var(--border-color);
 }
 
-/* Orange border ONLY on the robot woman image - no container wrapping */
-.hero-bg-logo {
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 600px;
-  height: auto;
-  max-height: 80vh;
-  object-fit: contain;
-  opacity: 0.6;
-  pointer-events: none;
-  z-index: 0;
-  display: block;
-  margin: 0;
-  padding: 0;
-  /* Orange border ONLY on this image element - not on any container */
-  border: 3px solid #ff6b35;
-  border-radius: 8px;
-  box-sizing: content-box;
-  vertical-align: top;
-}
-
-.theme-light .hero-bg-logo {
-  opacity: 0.6;
-}
 
 .hero-content { 
   max-width: 900px; 
