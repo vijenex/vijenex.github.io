@@ -858,22 +858,415 @@ img {
   font-size: 14px;
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE - MOBILE FIRST APPROACH */
+
+/* Tablet and below (768px) */
 @media (max-width: 768px) {
-  .headline { font-size: 36px; }
-  .sub { font-size: 16px; }
-  .nav { gap: 16px; }
-  .nav a:not(.btn) { display: none; }
-  .nav-controls { gap: 8px; }
-  .grid-3, .grid-4 { grid-template-columns: 1fr; }
-  .footer-content { grid-template-columns: 1fr; }
-  .footer-links { grid-template-columns: 1fr; }
-  .tech-logos { grid-template-columns: 1fr; }
-  .social-icons { gap: 16px; }
-  .lang-dropdown { right: auto; left: 0; }
+  /* Header adjustments */
+  .topbar .inner {
+    padding: 12px 16px;
+  }
+  
+  .brand {
+    font-size: 24px;
+    gap: 8px;
+  }
+  
+  .logo-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .nav {
+    gap: 12px;
+  }
+  
+  .nav a:not(.btn) {
+    display: none;
+  }
+  
+  .nav-controls {
+    gap: 6px;
+  }
+  
+  .btn.small {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+  
+  .theme-btn, .lang-btn {
+    width: 36px;
+    height: 36px;
+    padding: 6px;
+    font-size: 18px;
+  }
+  
+  .lang-text {
+    font-size: 11px;
+  }
+  
+  /* Hero section */
+  .hero {
+    padding: 60px 16px;
+    min-height: auto;
+  }
+  
+  .hero-content {
+    padding: 0;
+  }
+  
+  .headline {
+    font-size: 32px;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  
+  .sub {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 24px;
+    padding: 0 8px;
+  }
+  
+  .badge {
+    font-size: 12px;
+    padding: 6px 12px;
+    margin-bottom: 16px;
+  }
+  
+  .hero-ctas {
+    gap: 12px;
+  }
+  
+  .btn.ghost {
+    padding: 10px 24px;
+    font-size: 14px;
+  }
+  
+  /* Sections */
+  .what-we-do {
+    padding: 60px 16px;
+  }
+  
+  .what-we-do h2 {
+    font-size: 2rem;
+    margin-bottom: 32px;
+  }
+  
+  .section {
+    padding: 60px 16px;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+  
+  /* Grid layouts */
+  .grid-3, .grid-4 {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .feature-box {
+    padding: 24px;
+  }
+  
+  .feature-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+  }
+  
+  .feature-box p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  .feature-box .icon {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 16px;
+  }
+  
+  /* Footer */
+  .site-footer {
+    padding: 40px 16px 20px;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+  
+  .footer-links {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .footer-brand p {
+    font-size: 18px;
+  }
+  
+  .footer-social {
+    padding: 24px 0 20px;
+  }
+  
+  .social-icons {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  
+  .social-icon {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .social-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .footer-bottom {
+    padding-top: 20px;
+    font-size: 12px;
+  }
+  
+  /* Language dropdown */
+  .lang-dropdown {
+    right: auto;
+    left: 0;
+    min-width: 160px;
+  }
+  
+  .lang-option {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
 }
 
+/* Small mobile (480px and below) */
 @media (max-width: 480px) {
-  .headline { font-size: 28px; }
-  .section-title { font-size: 32px; }
+  /* Header - even smaller */
+  .topbar .inner {
+    padding: 10px 12px;
+  }
+  
+  .brand {
+    font-size: 20px;
+    gap: 6px;
+  }
+  
+  .logo-icon {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .nav-controls {
+    gap: 4px;
+  }
+  
+  .btn.small {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+  
+  .theme-btn, .lang-btn {
+    width: 32px;
+    height: 32px;
+    padding: 4px;
+    font-size: 16px;
+  }
+  
+  .lang-text {
+    display: none; /* Hide text on very small screens, show only icon */
+  }
+  
+  /* Hero section - compact */
+  .hero {
+    padding: 40px 12px;
+  }
+  
+  .headline {
+    font-size: 24px;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  
+  .sub {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    padding: 0;
+  }
+  
+  .badge {
+    font-size: 11px;
+    padding: 5px 10px;
+    margin-bottom: 12px;
+  }
+  
+  .hero-ctas {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+  
+  .btn.ghost {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  /* Sections */
+  .what-we-do {
+    padding: 40px 12px;
+  }
+  
+  .what-we-do h2 {
+    font-size: 1.75rem;
+    margin-bottom: 24px;
+  }
+  
+  .section {
+    padding: 40px 12px;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .container {
+    padding: 0 12px;
+  }
+  
+  /* Feature boxes */
+  .feature-box {
+    padding: 20px;
+  }
+  
+  .feature-box h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+  }
+  
+  .feature-box p {
+    font-size: 0.95rem;
+  }
+  
+  .feature-box .icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 12px;
+  }
+  
+  /* Footer */
+  .site-footer {
+    padding: 32px 12px 16px;
+  }
+  
+  .footer-content {
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  
+  .footer-links {
+    gap: 20px;
+  }
+  
+  .footer-col h4 {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+  
+  .footer-col a {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-brand p {
+    font-size: 16px;
+  }
+  
+  .footer-tagline {
+    font-size: 12px;
+  }
+  
+  .footer-social {
+    padding: 20px 0 16px;
+  }
+  
+  .social-icons {
+    gap: 12px;
+  }
+  
+  .social-icon {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .social-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .footer-bottom {
+    padding-top: 16px;
+    font-size: 11px;
+    line-height: 1.5;
+  }
+  
+  /* Typography adjustments */
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.5rem; }
+  h4 { font-size: 1.25rem; }
+  
+  p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  /* Language dropdown */
+  .lang-dropdown {
+    min-width: 140px;
+  }
+  
+  .lang-option {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+}
+
+/* Very small screens (360px and below) */
+@media (max-width: 360px) {
+  .headline {
+    font-size: 20px;
+  }
+  
+  .sub {
+    font-size: 13px;
+  }
+  
+  .brand {
+    font-size: 18px;
+  }
+  
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .what-we-do h2 {
+    font-size: 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+  }
 }
